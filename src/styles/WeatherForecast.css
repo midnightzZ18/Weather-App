@@ -48,3 +48,22 @@
 .container.dark .forecast-container .loading {
     color: #aaa;
 }
+
+.forecast-container {
+    /* Ensure smooth scrolling on touch devices */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin; 
+}
+
+@media (max-width: 600px) {
+    .forecast-container {
+        justify-content: flex-start; /* Align to start so user knows to scroll */
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .forecast-card {
+        min-width: 120px; /* Prevent cards from squishing */
+        padding: 10px;
+    }
+}

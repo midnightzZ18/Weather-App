@@ -91,7 +91,6 @@ main {
 .centered-component {
     max-width: 800px;
     padding: 50px;
-    margin: 0 auto;
     justify-content: center;
 
 }
@@ -121,9 +120,22 @@ main {
 }
 
 @media (max-width: 768px) {
-    .full-width-component,
-    .centered-component {
-        padding: 15px;
-        margin: 0 10px;
+    main {
+        padding: 10px; /* Reduce padding on mobile */
+    }
+
+    .top-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .left-column {
+        max-width: 100%; /* Allow cards to take full width */
+    }
+
+    /* Adjust font sizes globally for mobile */
+    body {
+        font-size: 14px;
     }
 }

@@ -39,6 +39,7 @@ const Navbar = ({ theme, setTheme, onSearch }) => {
   return (
     <header>
       <div className="navbar">
+        
         <img
           src={theme === 'light' ? reactLogo : reactLogo_dark}
           alt="Logo"

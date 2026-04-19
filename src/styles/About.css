@@ -87,3 +87,24 @@
   text-decoration: none;
   font-size: 18px;
 }
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .about-container h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .about-section h3 {
+    font-size: 18px;
+  }
+
+  .about-section p, 
+  .about-features li {
+    font-size: 14px;
+  }
+}

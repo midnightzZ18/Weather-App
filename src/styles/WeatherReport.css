@@ -81,3 +81,23 @@
 .container.dark .loading {
     color: #aaa;
 }
+
+@media (max-width: 480px) {
+    .weather-card {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .weather-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .weather-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .temperature {
+        font-size: 1.3rem;
+    }
+}

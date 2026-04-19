@@ -44,7 +44,7 @@ function WeatherTips({ city }) {
           } else if (temp >= 20) {
             return [
               { text: 'สวมเสื้อแขนยาวบาง ๆ และแจ็คเก็ตเบา', icon: 'fa-tshirt' },
-              { text: 'พกเสื้อคลุมเผื่ออากาศเย็น', icon: 'fa-jacket' },
+              { text: 'พกเสื้อคลุมเผื่ออากาศเย็น', icon: '🧥' },
             ];
           } else if (temp >= 15) {
             return [
@@ -53,28 +53,28 @@ function WeatherTips({ city }) {
             ];
           } else if (temp >= 10) {
             return [
-              { text: 'สวมเสื้อกันหนาวและฮู้ด ผ้าพันคอ', icon: 'fa-mitten' },
-              { text: 'เริ่มใส่ถุงมือได้', icon: 'fa-gloves' },
+              { text: 'สวมเสื้อกันหนาวและฮู้ด ผ้าพันคอ', icon: '🧣' },
+              { text: 'เริ่มใส่ถุงมือได้', icon: 'fa-mitten' },
             ];
           } else if (temp >= 5) {
             return [
-              { text: 'สวมเสื้อกันหนาวหนาและโค้ท หมวกไหมพรม', icon: 'fa-mitten' },
-              { text: 'ใส่ถุงมือและถุงเท้าหนา', icon: 'fa-gloves' },
+              { text: 'สวมเสื้อกันหนาวหนาและโค้ท หมวกไหมพรม', icon: '🧥' },
+              { text: 'ใส่ถุงมือและถุงเท้าหนา', icon: 'fa-mitten' },
             ];
           } else if (temp >= 0) {
             return [
-              { text: 'สวมหลายชั้น: เสื้อฮีทเทค เสื้อไหมพรม โค้ทหนา', icon: 'fa-mitten' },
-              { text: 'ใส่หมวก ผ้าพันคอ ถุงมือครบ', icon: 'fa-scarf' },
+              { text: 'สวมหลายชั้น: เสื้อฮีทเทค เสื้อไหมพรม โค้ทหนา', icon: '🧥' },
+              { text: 'ใส่หมวก ผ้าพันคอ ถุงมือครบ', icon: '🧣' },
             ];
           } else if (temp >= -20) {
             return [
-              { text: 'สวมชั้นในกันหนาว ชั้นกลางเก็บความร้อน โค้ทหนา', icon: 'fa-mitten' },
-              { text: 'ใส่บูทและถุงมือกันลม ระวังน้ำแข็งลื่น', icon: 'fa-snowflake' },
+              { text: 'สวมชั้นในกันหนาว ชั้นกลางเก็บความร้อน โค้ทหนา', icon: '🧥' },
+              { text: 'ใส่บูทและถุงมือกันลม ระวังน้ำแข็งลื่น', icon: 'fa-mitten' },
             ];
           } else {
             return [
               { text: 'สวมชั้นในกันหนาวและโค้ทหนา ระวังอากาศเยือกแข็ง', icon: 'fa-snowflake' },
-              { text: 'ปกป้องผิวจากลมหนาวด้วยผ้าพันคอและหมวก', icon: 'fa-scarf' },
+              { text: 'ปกป้องผิวจากลมหนาวด้วยผ้าพันคอและหมวก', icon: '🧣' },
             ];
           }
         };
@@ -97,7 +97,7 @@ function WeatherTips({ city }) {
               ];
             case 'clouds':
               return [
-                { text: 'พกเสื้อแจ็คเก็ตบาง ๆ เผื่ออากาศเปลี่ยน', icon: 'fa-tshirt' },
+                { text: 'พกเสื้อแจ็คเก็ตบาง ๆ เผื่ออากาศเปลี่ยน', icon: '🥼' },
                 { text: 'ตรวจสอบพยากรณ์ฝนก่อนออกจากบ้าน', icon: 'fa-cloud-rain' },
               ];
             case 'snow':
@@ -149,8 +149,14 @@ function WeatherTips({ city }) {
       {weather ? (
         <ul>
           {tips.map((tip, index) => (
-            <li key={index} className="tip-item">
-              <i className={`fas ${tip.icon} tip-icon`}></i>
+            <li key={index} className="tip-item" aria-label={`คำแนะนำ: ${tip.text}`}>
+              {tip.icon && tip.icon.startsWith('fa-') ? (
+                <i className={`fas ${tip.icon} tip-icon`} aria-hidden="true"></i>
+              ) : (
+                <span className="tip-icon" role="img" aria-hidden="true">
+                  {tip.icon || '🌍'}
+                </span>
+              )}
               <span className="tip-text">{tip.text}</span>
             </li>
           ))}

@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const API_KEY = import.meta.env.VITE_API_KEY || '5f31b1bc5d88a35c79c821c5ce03d82c';
 
+// @ts-ignore
 function useWeather(city) {
     const [weatherData, setWeatherData] = useState(null);
     const [loading, setLoading] = useState(true);

@@ -163,3 +163,34 @@ ul li a.active {
 .dark .search-box input::placeholder {
   color: #222;
 }
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 5%;
+    gap: 15px;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  ul li {
+    margin: 5px 10px;
+    font-size: 16px;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .toggle-icon {
+    margin-left: 0;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
