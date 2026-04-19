@@ -95,6 +95,42 @@
 
 .container.dark .weather-tips p {
   color: #e0e0e0;
+<<<<<<< HEAD
+=======
+}
+
+
+@media (max-width: 600px) {
+  .weather-tips {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .weather-tips h2 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+  }
+
+  .weather-tips .tip-item {
+    padding: 10px;
+    margin-bottom: 15px;
+    min-height: 32px;
+  }
+
+  .weather-tips .tip-icon {
+    font-size: 1.1rem;
+    width: 20px;
+  }
+
+  .weather-tips .tip-text {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .weather-tips p {
+    font-size: 0.9rem;
+  }
+>>>>>>> 3f192007648ed80b0f57bb57afec7d561e12c666
 }
 
 
