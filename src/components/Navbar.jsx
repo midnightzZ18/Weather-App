@@ -1,13 +1,13 @@
-// src/components/Navbar.jsx
 import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+// ตรวจสอบ path รูปภาพให้ถูกต้องตามโปรเจกต์จริง
 import reactLogo from '../assets/logo-dark.png';
 import reactLogo_dark from '../assets/logo-light.png';
 import search_icon_light from '../assets/search-w.png';
 import search_icon_dark from '../assets/search-b.png';
 import toggle_light from '../assets/night.png';
 import toggle_dark from '../assets/day.png';
-import '../styles/App.css';
+import '../styles/App.css'; // ตรวจสอบว่าไฟล์ App.css อยู่ในโฟลเดอร์ styles จริงหรือไม่
 
 const Navbar = ({ theme, setTheme, onSearch }) => {
   const [inputCity, setInputCity] = useState('');
@@ -15,12 +15,15 @@ const Navbar = ({ theme, setTheme, onSearch }) => {
   const dropdownRef = useRef(null);
 
   const toggle_mode = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light');
+    // ป้องกัน error กรณีลืมส่ง setTheme มาจาก App.jsx
+    if (typeof setTheme === 'function') {
+      setTheme(theme === 'light' ? 'dark' : 'light');
+    }
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (inputCity.trim()) {
+    if (inputCity.trim() && typeof onSearch === 'function') {
       onSearch(inputCity.trim());
       setInputCity('');
     }
@@ -39,7 +42,6 @@ const Navbar = ({ theme, setTheme, onSearch }) => {
   return (
     <header>
       <div className="navbar">
-        
         <img
           src={theme === 'light' ? reactLogo : reactLogo_dark}
           alt="Logo"
@@ -53,15 +55,13 @@ const Navbar = ({ theme, setTheme, onSearch }) => {
             </NavLink>
           </li>
           <li className="features-dropdown" ref={dropdownRef}>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setShowFeatureDropdown(!showFeatureDropdown);
-              }}
+            {/* เปลี่ยนจาก <a> เป็น <span> เพื่อเลี่ยงพฤติกรรม default ของ link */}
+            <span
+              style={{ cursor: 'pointer' }}
+              onClick={() => setShowFeatureDropdown(!showFeatureDropdown)}
             >
               Features
-            </a>
+            </span>
             {showFeatureDropdown && (
               <div className="dropdown-menu">
                 <NavLink
@@ -105,6 +105,7 @@ const Navbar = ({ theme, setTheme, onSearch }) => {
             src={theme === 'light' ? search_icon_light : search_icon_dark}
             alt="Search"
             onClick={handleSearch}
+            style={{ cursor: 'pointer' }}
           />
         </form>
         <img

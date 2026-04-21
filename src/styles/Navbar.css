@@ -164,33 +164,21 @@ ul li a.active {
   color: #222;
 }
 
+/* Navbar.css เพิ่มเติม */
 @media (max-width: 900px) {
-  .navbar {
-    flex-direction: column;
-    padding: 15px 5%;
-    gap: 15px;
-  }
+    .navbar {
+        padding: 15px 20px;
+    }
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    .toggle-icon {
+        position: absolute;
+        right: 20px;
+        top: 20px; /* จัดตำแหน่งปุ่มเปลี่ยนโหมดให้คงที่ */
+        width: 40px;
+    }
 
-  ul li {
-    margin: 5px 10px;
-    font-size: 16px;
-  }
-
-  .search-box {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .toggle-icon {
-    margin-left: 0;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
+    .search-box {
+        margin-top: 10px;
+        width: 90%; /* ให้ช่องค้นหาเด่นชัดขึ้น */
+    }
 }

@@ -119,22 +119,25 @@ main {
     margin: 0 auto;
 }
 
+/* App.css */
 @media (max-width: 768px) {
     main {
-        padding: 10px; /* Reduce padding on mobile */
+        padding: 10px; /* ลดระยะขอบข้างลง */
     }
 
     .top-section {
         flex-direction: column;
         align-items: center;
+        width: 100%;
         gap: 15px;
     }
 
     .left-column {
-        max-width: 100%; /* Allow cards to take full width */
+        max-width: 100%; /* ให้การ์ดขยายเต็มความกว้าง */
+        width: 100%;
     }
 
-    /* Adjust font sizes globally for mobile */
+    /* ปรับขนาดฟอนต์พื้นฐานให้เล็กลงเล็กน้อยเพื่อประหยัดพื้นที่ */
     body {
         font-size: 14px;
     }

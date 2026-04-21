@@ -55,15 +55,16 @@
     scrollbar-width: thin; 
 }
 
+/* WeatherForecast.css */
 @media (max-width: 600px) {
     .forecast-container {
-        justify-content: flex-start; /* Align to start so user knows to scroll */
+        justify-content: flex-start; /* ให้เริ่มจากซ้ายเพื่อให้รู้ว่าเลื่อนขวาได้ */
         padding: 10px;
         gap: 10px;
     }
 
     .forecast-card {
-        min-width: 120px; /* Prevent cards from squishing */
+        min-width: 110px; /* ป้องกันการ์ดโดนบีบ */
         padding: 10px;
     }
 }
