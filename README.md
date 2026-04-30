@@ -6,7 +6,7 @@ A responsive weather forecast web application that provides real-time weather da
 ## 📷 Screenshots
 
 ### Homepage
-![Homepage](images/homepage.png)
+![Homepage](สกรีนช็อต 2025-05-09 153939.png)
 
 ---
 ## 🚀 Features
