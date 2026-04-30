@@ -1,15 +1,50 @@
-# `create-preact`
+# 🌦️ Weather Report App
 
-<h2 align="center">
-  <img height="256" width="256" src="./src/assets/preact.svg">
-</h2>
+A responsive weather forecast web application that provides real-time weather data for cities worldwide using the OpenWeather API.
 
-<h3 align="center">Get started using Preact and Vite!</h3>
+---
+## 📷 Screenshots
 
-## Getting Started
+### Homepage
+![Homepage](images/homepage.png)
 
--   `npm run dev` - Starts a dev server at http://localhost:5173/
+---
+## 🚀 Features
 
--   `npm run build` - Builds for production, emitting to `dist/`
+- Search weather by city name
+- Real-time current weather data
+- Temperature, humidity, wind speed
+- Light / Dark mode
+- Responsive design
+- Weather suggestions based on conditions
+- Clean and modern UI
 
--   `npm run preview` - Starts a server at http://localhost:4173/ to test production build locally
+---
+
+## 💻 Tech Stack
+
+- React
+- JavaScript
+- CSS3
+- OpenWeather API
+
+---
+
+## 🌐 Live Demo
+
+🔗 https://weather-app-teera.netlify.app/
+
+---
+
+
+
+
+## 🎯 Purpose of This Project
+
+This project was created to improve my frontend development skills and API integration experience.
+
+---
+
+## 👨‍💻 Author
+
+Teerapong Homchuen
